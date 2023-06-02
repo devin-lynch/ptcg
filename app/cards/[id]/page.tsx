@@ -1,4 +1,4 @@
-export default function Page(params: { id: string }) {
+export default function Page({ params }: { params: { id: string } }) {
   return (
     <div>
       <p>Hello world!</p>
