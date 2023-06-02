@@ -1,9 +1,15 @@
 import Card from './components/Card';
 
+type Card = {
+  images: {
+    small: string;
+  };
+};
+
 export default function Home() {
-  const getBaseCardData = async () => {
+  const getBaseCardData: () => Promise<Card[]> = async () => {
     try {
-      const response = await fetch('http://localhost:3002/cards/base');
+      const response = await fetch(`${process.env.SERVER_URL}/cards/base`);
       const data = await response.json();
       return data;
     } catch (error) {
@@ -14,10 +20,8 @@ export default function Home() {
   const buildCardComponents = async () => {
     try {
       const data = await getBaseCardData();
-      const components = data.map((card, i) => {
-        return (
-            <Card url={card.images.small} key={`card-${i}`}/>
-        );
+      const components = data.map((card, i: number) => {
+        return <Card url={card.images.small} key={`card-${i}`} />;
       });
       return components;
     } catch (error) {
@@ -38,9 +42,7 @@ export default function Home() {
       />
 
       <h2>Base Set Pokemon:</h2>
-      <div className='card-container mt-5'>
-        {components}
-      </div>
+      <div className="card-container mt-5">{components}</div>
     </main>
   );
 }
