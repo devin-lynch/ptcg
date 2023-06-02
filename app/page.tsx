@@ -13,7 +13,7 @@ export default function Home() {
       const data = await response.json();
       return data;
     } catch (error) {
-      console.warn(error);
+      console.error(error);
     }
   };
 
