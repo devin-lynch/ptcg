@@ -38,7 +38,7 @@ export default function Home() {
       />
 
       <h2>Base Set Pokemon:</h2>
-      <div className='card-container'>
+      <div className='card-container mt-5'>
         {components}
       </div>
     </main>

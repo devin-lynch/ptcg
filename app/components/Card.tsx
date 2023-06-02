@@ -4,7 +4,7 @@ type Props = {
 
 export default function Card({ url }: Props) {
   return (
-    <div>
+    <div className="card-container transform transition duration-200 hover:scale-110">
       <a href="">
         <img src={url}></img>
       </a>
