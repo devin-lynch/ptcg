@@ -1,7 +1,11 @@
-export default function Card() {
-    return (
-        <div>
-            <p>Card</p>
-        </div>
-    )
+type Props = {
+  url: string;
+};
+
+export default function Card({ url }: Props) {
+  return (
+    <div>
+      <img src={url}></img>
+    </div>
+  );
 }
