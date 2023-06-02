@@ -14,11 +14,9 @@ export default function Home() {
   const buildCardComponents = async () => {
     try {
       const data = await getBaseCardData();
-      const components = data.map((card) => {
+      const components = data.map((card, i) => {
         return (
-          <li>
-            <Card url={card.images.small} />
-          </li>
+            <Card url={card.images.small} key={`card-${i}`}/>
         );
       });
       return components;
@@ -40,7 +38,9 @@ export default function Home() {
       />
 
       <h2>Base Set Pokemon:</h2>
-      <ul>{components}</ul>
+      <div className='card-container'>
+        {components}
+      </div>
     </main>
   );
 }

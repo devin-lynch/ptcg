@@ -5,7 +5,9 @@ type Props = {
 export default function Card({ url }: Props) {
   return (
     <div>
-      <img src={url}></img>
+      <a href="">
+        <img src={url}></img>
+      </a>
     </div>
   );
 }
