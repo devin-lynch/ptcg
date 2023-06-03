@@ -1,8 +1,14 @@
 export default function Page({ params }: { params: { id: string } }) {
+
   return (
     <div>
-      <p>Hello world!</p>
-      <p>{params.id}</p>
+        <div className="">
+            <p>Pokémon ID:</p>
+            <p>{params.id}</p>
+        </div>
+        <div className="">
+            <img src="" alt="" className=""/>
+        </div>
     </div>
   );
 }
